@@ -11,7 +11,7 @@ repositories {
 
 task rtiddsgen(type:Exec) {
     commandLine ('rtiddsgen')
-    args ('-language', 'java', '-ppDisable', '-d', 'src/main/java', 'src/main/idl/TypeA.idl')
+    args ('-language', 'java', '-ppDisable', '-update', '-d', 'src/main/java', 'src/main/idl/TypeA.idl')
 }
 
 dependencies {
