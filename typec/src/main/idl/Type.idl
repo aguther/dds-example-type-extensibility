@@ -1,0 +1,22 @@
+module Dds {
+module Example {
+module Type {
+
+    struct PayloadA {
+        long myNumber;
+        string myString;
+    };
+
+    struct PayloadB {
+        unsigned long myOtherNumber;
+    };
+
+    struct Type {
+        long id;//@key
+        PayloadB payloadB;//@Optional
+        PayloadA payloadA;//@Optional
+    };
+
+};
+};
+};

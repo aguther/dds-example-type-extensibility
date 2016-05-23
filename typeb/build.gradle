@@ -1,0 +1,27 @@
+group 'net.guther.dds.type.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+task rtiddsgen(type:Exec) {
+	inputs.dir 'src/main/idl'
+	outputs.dir 'src/main/java/Dds'
+
+    commandLine ('rtiddsgen')
+    args ('-language', 'java', '-ppDisable', '-update', 'typefiles', '-d', 'src/main/java', 'src/main/idl/Type.idl')
+}
+
+dependencies {
+    compile files('/usr/lib/java/nddsjava.jar')
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.+'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    runtime group: 'org.slf4j', name: 'slf4j-simple', version: '1.+'
+}
+
+compileJava.dependsOn rtiddsgen
