@@ -14,7 +14,7 @@ task rtiddsgen(type:Exec) {
 	outputs.dir 'src/main/java/Dds'
 
     commandLine ('rtiddsgen')
-    args ('-language', 'java', '-ppDisable', '-update', 'typefiles', '-d', 'src/main/java', 'src/main/idl/TypeA.idl')
+    args ('-language', 'java', '-ppDisable', '-update', 'typefiles', '-d', 'src/main/java', 'src/main/idl/Type.idl')
 }
 
 dependencies {

@@ -17,8 +17,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import Dds.Example.Type.PayloadA;
-import Dds.Example.Type.TypeA;
-import Dds.Example.Type.TypeATypeSupport;
+import Dds.Example.Type.Type;
+import Dds.Example.Type.TypeTypeSupport;
 
 public class Main {
 
@@ -39,14 +39,14 @@ public class Main {
         DomainParticipant dp = DomainParticipantFactory.get_instance().create_participant(0, dpQos, null, 0);
 
         log.info("Register type");
-        TypeATypeSupport.get_instance().register_typeI(dp, TypeATypeSupport.get_type_name());
+        TypeTypeSupport.get_instance().register_typeI(dp, TypeTypeSupport.get_type_name());
 
         log.info("Get default topic QoS");
         TopicQos topicQos = new TopicQos();
         dp.get_default_topic_qos(topicQos);
 
         log.info("Create topic");
-        Topic topic = dp.create_topic("TopicType", TypeATypeSupport.get_type_name(), topicQos, null, 0);
+        Topic topic = dp.create_topic("TopicType", TypeTypeSupport.get_type_name(), topicQos, null, 0);
 
         log.info("Get default data writer QoS");
         DataWriterQos dwQos = new DataWriterQos();
@@ -68,7 +68,7 @@ public class Main {
         while (!shouldTerminate) {
             log.info("Writing sample #{}", counter++);
 
-            TypeA sample = new TypeA();
+            Type sample = new Type();
             sample.id = 1;
             sample.payloadA = new PayloadA();
             sample.payloadA.myNumber = counter;
