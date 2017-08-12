@@ -25,3 +25,16 @@ dependencies {
 }
 
 compileJava.dependsOn rtiddsgen
+
+task run(type: JavaExec) {
+    // set classpath
+    classpath = files(sourceSets.main.runtimeClasspath)
+    // set main class
+    main = 'net.guther.dds.type.example.typea.Main'
+    // set working directory
+    workingDir = '.'
+    // jvm settings
+    jvmArgs = ['-Xmx512m']
+    // set system properties
+    systemProperties System.getProperties()
+}
