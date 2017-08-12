@@ -2,13 +2,15 @@ module Dds {
 module Example {
 module Type {
 
+    @mutable
     struct PayloadB {
-        unsigned long myOtherNumber;
+        @id(1) unsigned long myOtherNumber;
     };
 
+    @mutable
     struct Type {
-        long id;//@key
-        PayloadB payloadB;//@Optional
+        @id(1) @key long id;
+        @id(3) @optional PayloadB payloadB;
     };
 
 };
