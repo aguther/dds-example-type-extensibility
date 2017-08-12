@@ -1,9 +1,0 @@
-*.ear
-*.jar
-*.war
-.gradle
-.idea
-.mtj.tmp/
-build
-hs_err_pid*
-src/main/java/Dds

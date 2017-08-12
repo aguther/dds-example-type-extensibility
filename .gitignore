@@ -1,9 +1,13 @@
 *.ear
 *.jar
 *.war
-.gradle
+*.iml
 .idea
+.project
+.classpath
+.settings
 .mtj.tmp/
 build
 hs_err_pid*
-src/main/java/Dds
+**/src/main/java/Dds
+!**/gradle-wrapper.jar
