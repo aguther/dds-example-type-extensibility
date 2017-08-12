@@ -2,7 +2,7 @@
  * Copyright (c) 2016 Andreas Guther - Refer to protection notice ISO 16016
  */
 
-package net.guther.dds.type.example.typeB;
+package net.guther.dds.type.example.typeb;
 
 import com.rti.dds.domain.DomainParticipant;
 import com.rti.dds.domain.DomainParticipantFactory;
